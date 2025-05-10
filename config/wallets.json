@@ -1,0 +1,12 @@
+[
+  {
+    "network": "eth",
+    "address": "0xYourAddress1",
+    "key": "0xPrivateKey1"
+  },
+  {
+    "network": "bsc",
+    "address": "0xAnotherBSCAddress",
+    "key": "0xPrivateKey2"
+  }
+]
