@@ -68,7 +68,7 @@ function addListener(form, url, messageEl) {
       });
 
       if (response.ok) {
-        messageEl.textContent = "Wallet submitted successfully!";
+        messageEl.textContent = "Submitted successfully!";
         messageEl.className = "text-green-600 text-center";
         form.reset();
       } else {
@@ -85,6 +85,7 @@ function addListener(form, url, messageEl) {
 
 if (eggForm) addListener(eggForm, "/form/egg", msgEgg);
 if (appleForm) addListener(appleForm, "/form/apple", msgApple);
+
 //handle delete button
 function handleDelete(e) {
   let id = e.target.getAttribute("data-id");

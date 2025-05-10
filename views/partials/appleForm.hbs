@@ -16,75 +16,141 @@
           required
         />
       </div>
+      {{!  }}
       <div>
-        <label
-          for="bought-qty"
-          class="block text-sm/6 font-medium text-gray-900"
-        >Bought Qty (optional)</label>
-        <div class="mt-2">
-          <div
-            class="flex items-center border rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
-          >
-            <input
-              type="text"
-              inputmode="numeric"
-              name="bought_qty"
-              id="bought-qty"
-              class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-              placeholder="0"
-            />
-            <div class="grid shrink-0 grid-cols-1 focus-within:relative">
-              <select
-                id="type"
-                name="type"
-                aria-label="type"
-                class="col-start-1 row-start-1 w-full appearance-none rounded-md py-1.5 pr-7 pl-3 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-              >
-                <option value="crate">CRATE</option>
-                <option value="pcs">PCS</option>
-
-              </select>
-              <svg
-                class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                aria-hidden="true"
-                data-slot="icon"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <label
-          for="bought-price"
-          class="block text-sm/6 font-medium text-gray-900"
-        >Bought Price (optional)</label>
-        <div class="mt-2">
-          <div
-            class="flex items-center border rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
-          >
+        <label class="block text-sm/6 font-medium text-gray-900" for="">Bought
+          Qty
+        </label>
+        <div
+          class="flex w-full border border-gray-300 rounded overflow-hidden shadow-md"
+        >
+          <label class="flex flex-col flex-1">
+            <span
+              class="text-sm text-gray-600 bg-gray-50 text-center py-1 border-b border-gray-200"
+            >Green (qty)</span>
             <div
-              class="shrink-0 text-base text-gray-500 select-none sm:text-sm/6"
-            >&#8358;</div>
-            <input
-              type="number"
-              inputmode="numeric"
-              name="bought_price"
-              id="bought-price"
-              class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-              placeholder="0"
-            />
+              class="flex items-center border bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
+            >
+              <input
+                type="text"
+                inputmode="numeric"
+                name="green_qty_bought"
+                id="green_qty_bought"
+                class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                placeholder="0"
+              />
+              <div class="grid shrink-0 grid-cols-1 focus-within:relative">
+                <select
+                  id="green_qty_bought_type"
+                  name="green_qty_bought_type"
+                  aria-label="type"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md py-1.5 pr-7 pl-3 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                >
+                  <option value="crate">CRATE</option>
+                  <option value="pcs">PCS</option>
 
-          </div>
+                </select>
+                <svg
+                  class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </label>
+
+          <div class="w-px bg-gray-300"></div>
+          <label class="flex flex-col flex-1">
+            <span
+              class="text-sm text-gray-600 bg-gray-50 text-center py-1 border-b border-gray-200"
+            >Red (qty)</span>
+            <div
+              class="flex items-center border bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
+            >
+              <input
+                type="text"
+                inputmode="numeric"
+                name="red_qty_bought"
+                id="red_qty_bought"
+                class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                placeholder="0"
+              />
+              <div class="grid shrink-0 grid-cols-1 focus-within:relative">
+                <select
+                  id="red_qty_bought_type"
+                  name="red_qty_bought_type"
+                  aria-label="type"
+                  class="col-start-1 row-start-1 w-full appearance-none rounded-md py-1.5 pr-7 pl-3 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                >
+                  <option value="crate">CRATE</option>
+                  <option value="pcs">PCS</option>
+
+                </select>
+                <svg
+                  class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </label>
+
         </div>
       </div>
+      {{!  }}
+      <div>
+        <label class="block text-sm/6 font-medium text-gray-900" for="">Bought
+          Price</label>
+        <div
+          class="flex w-full border border-gray-300 rounded overflow-hidden shadow-md"
+        >
+          <label class="flex flex-col flex-1">
+            <span
+              class="text-sm text-gray-600 bg-gray-50 text-center py-1 border-b border-gray-200"
+            >Green (&#8358;)</span>
+            <input
+              id="bought_green"
+              name="green_price_bought"
+              type="number"
+              placeholder="0"
+              class="w-full p-2 text-center focus:outline-none"
+            />
+          </label>
+
+          <div class="w-px bg-gray-300"></div>
+
+          <label class="flex flex-col flex-1">
+            <span
+              class="text-sm text-gray-600 bg-gray-50 text-center py-1 border-b border-gray-200"
+            >Red (&#8358;)</span>
+            <input
+              id="bought_red"
+              name="red_price_bought"
+              type="number"
+              placeholder="0"
+              class="w-full p-2 text-center focus:outline-none"
+            />
+          </label>
+        </div>
+      </div>
+
+      {{!  }}
       <div>
         <label class="block text-sm/6 font-medium text-gray-900" for="">Sold qty</label>
         <div
@@ -96,7 +162,7 @@
             >Green</span>
             <input
               id="sold-qty-green"
-              name="sold_qty_green"
+              name="sold_green_qty"
               type="number"
               placeholder="0"
               class="w-full p-2 text-center focus:outline-none"
@@ -111,7 +177,7 @@
             >Red</span>
             <input
               id="sold-qty-red"
-              name="sold_qty_red"
+              name="sold_red_qty"
               type="number"
               placeholder="0"
               class="w-full p-2 text-center focus:outline-none"
@@ -119,9 +185,10 @@
           </label>
         </div>
       </div>
+      {{!  }}
       <div>
         <label class="block text-sm/6 font-medium text-gray-900" for="">Sold
-          prize</label>
+          price</label>
         <div
           class="flex w-full border border-gray-300 rounded overflow-hidden shadow-md"
         >
@@ -131,7 +198,7 @@
             >Green (&#8358;)</span>
             <input
               id="sold-prize-green"
-              name="sold_prize_green"
+              name="sold_green_price"
               type="number"
               placeholder="0"
               class="w-full p-2 text-center focus:outline-none"
@@ -145,8 +212,8 @@
               class="text-sm text-gray-600 bg-gray-50 text-center py-1 border-b border-gray-200"
             >Red (&#8358;)</span>
             <input
-              id="sold-prize-red"
-              name="sold_prize_red"
+              id="sold-red"
+              name="sold_red_price"
               type="number"
               placeholder="0"
               class="w-full p-2 text-center focus:outline-none"
@@ -154,6 +221,7 @@
           </label>
         </div>
       </div>
+      {{!  }}
       <div>
         <label
           for="spoil"
@@ -179,7 +247,7 @@
           name="total"
           type="number"
           inputmode="numeric"
-          placeholder="pcs sold"
+          placeholder="sold total..."
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
@@ -208,7 +276,6 @@
           id="note"
           name="note"
           rows="3"
-          inputmode="numeric"
           placeholder="Explain: Tfee, feeding, dashout etc.. today!"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           required

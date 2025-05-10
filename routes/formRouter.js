@@ -7,6 +7,10 @@ Handlebars.registerHelper("add", function (a, b) {
   return a + b;
 });
 
+Handlebars.registerHelper("format", function (date) {
+  return date.toLocaleDateString();
+});
+
 router.get("/", async (req, res) => {
   const data = await eggModel.find({}).lean();
   res.render("layouts/form", { title: "Daily Sales", data });
@@ -56,33 +60,39 @@ router.post("/egg", async (req, res) => {
 router.post("/apple", async (req, res) => {
   const {
     date,
-    bought_qty,
-    type,
-    bought_price,
-    sold_qty_green,
-    sold_qty_red,
-    sold_prize_green,
-    sold_prize_red,
-    spoil,
-    total,
+    green_price_bought,
+    green_qty_bought,
+    green_qty_bought_type,
     miscellaneous,
     note,
+    red_price_bought,
+    red_qty_bought,
+    red_qty_bought_type,
+    sold_green_price,
+    sold_green_qty,
+    sold_red_price,
+    sold_red_qty,
+    spoil,
+    total,
   } = req.body;
 
   //
   const newData = new appleModel({
     date,
-    bought_qty,
-    type,
-    bought_price,
-    sold_qty_green,
-    sold_qty_red,
-    sold_prize_green,
-    sold_prize_red,
-    spoil,
-    total,
+    green_price_bought,
+    green_qty_bought,
+    green_qty_bought_type,
     miscellaneous,
     note,
+    red_price_bought,
+    red_qty_bought,
+    red_qty_bought_type,
+    sold_green_price,
+    sold_green_qty,
+    sold_red_price,
+    sold_red_qty,
+    spoil,
+    total,
   });
   try {
     await newData.save();

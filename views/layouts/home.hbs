@@ -12,6 +12,7 @@
         <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
           <tr>
             <th class="px-6 py-3 text-left">SN</th>
+            <th class="px-6 py-3 text-left">Date</th>
             <th class="px-6 py-3 text-left">Big</th>
             <th class="px-6 py-3 text-left">Small</th>
             <th class="px-6 py-3 text-left">Spent (&#8358;)</th>
@@ -24,6 +25,7 @@
           {{#each data}}
             <tr class="hover:bg-gray-50">
               <td class="px-6 py-4 font-medium">{{add @index 1}}</td>
+              <td class="px-6 py-4 font-medium">{{format this.date}}</td>
               <td class="px-6 py-4">{{this.sold_qty_bg}}</td>
               <td class="px-6 py-4">{{this.sold_qty_sm}}</td>
               <td class="px-6 py-4">{{this.miscellaneous}}</td>
