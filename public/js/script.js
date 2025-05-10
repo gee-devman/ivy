@@ -83,9 +83,8 @@ function addListener(form, url, messageEl) {
   });
 }
 
-addListener(eggForm, "/form/egg", msgEgg);
-addListener(appleForm, "/form/apple", msgApple);
-
+if (eggForm) addListener(eggForm, "/form/egg", msgEgg);
+if (appleForm) addListener(appleForm, "/form/apple", msgApple);
 //handle delete button
 function handleDelete(e) {
   let id = e.target.getAttribute("data-id");
