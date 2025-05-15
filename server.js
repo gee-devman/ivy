@@ -25,6 +25,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use("/form", require("./routes/formRouter"));
 app.use("/form/apple", require("./routes/appleRouter"));
 app.use("/delete", require("./routes/delRouter"));
+app.use("/note", require("./routes/noteRouter"));
 app.get("/", require("./routes/homeRouter"));
 
 (async () => {

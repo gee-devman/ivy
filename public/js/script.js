@@ -162,3 +162,45 @@ tabs.forEach((tab) => {
 });
 
 /***************** TOGGLE FORM END *************/
+/***************** SAVE NOTE END *************/
+
+if (window.location.pathname === "/note") {
+  const API_URL = "/note"; // Backend endpoint for GET and POST
+
+  const simplemde = new SimpleMDE({
+    element: document.getElementById("myNote"),
+  });
+
+  // Load saved note on page load
+  // fetch(API_URL)
+  //   .then((res) => {
+  //     console.log(res);
+  //     // if (!res.ok) throw new Error("Failed to load note");
+  //     return res.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+  //     if (data.note) {
+  //       simplemde.value(data.note);
+  //     }
+  //   })
+  //   .catch((err) => {
+  //     console.log("Load error:", err);
+  //   });
+
+  // Save button handler
+  document.getElementById("saveBtn").addEventListener("click", () => {
+    const content = simplemde.value();
+    const id = document.getElementById("noteId").value;
+
+    fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ _id: id, note: content }),
+    })
+      .then((res) => res.json())
+      .then(() => alert("Note updated!"))
+      .catch(() => alert("Error updating note"));
+  });
+}
+/***************** SAVE NOTE END *************/
